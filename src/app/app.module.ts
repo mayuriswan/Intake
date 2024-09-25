@@ -20,9 +20,14 @@ import { LayoutModule } from 'app/layout/layout.module';
 import { UserInputComponent } from './user-input/user-input.component';
 import { DashboardComponent } from './main/dashboard/dashboard.component';
 import { ThankYouComponent } from './main/pages/thankYou/thank-you/thank-you.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
  
+
+  { path: '', component: AppComponent },  // Default route to show layout
+  { path: 'login', component: LoginComponent },  // Login route
+
   {
     path: 'pages',
     loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule)
@@ -53,8 +58,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    UserInputComponent
-  ],
+    UserInputComponent,
+    LoginComponent  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
